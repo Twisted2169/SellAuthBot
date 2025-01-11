@@ -1,0 +1,94 @@
+BOT_TOKEN: "Replace_Me"   ## Found in Discord Dev Portal.
+CLIENT_ID: "Replace_Me"   ## Found in Discord Dev Portal.
+GUILD_ID: "Replace_Me"   ## Server ID from which your bot is located.
+BOT_CUSTOMER_ROLE_ID: "Replace_Me"   ## Customer Role.
+TARGET_CHANNEL_ID: "Replace_Me"   ## Where the ClaimPanel gets sent.
+SA_API_KEY: "Replace_Me"   ## SellAuth Shop API.
+SA_SHOP_ID: "Replace_Me"   ## SellAuth Shop Id.
+ALLOWED_USER_IDS:
+  - "Replace_Me"   ## Users who are allowed to execute the /claimpanel cmd.
+ALLOWED_ROLE_IDS:
+  - "Replace_Me"    ## Users who are allowed to execute the /claimpanel cmd.
+
+# New claim panel configuration
+CLAIM_PANEL:
+  TITLE: 'Claim Role | Hello'
+  DESCRIPTION: '**Click the button below to claim your customer role by providing your invoice ID and email.**'
+  EXAMPLE_INVOICE_ID: 'd674a4jh34333-0008601411357'
+  COLOR: '#9000ff'
+  THUMBNAIL_URL: ''  # Leave empty if no thumbnail needed
+  IMAGE_URL: ''      # Leave empty if no image needed
+  BUTTON_LABEL: 'Claim Customer Role'
+  MODAL_TITLE: 'Claim Customer Role'
+  EMAIL_LABEL: 'Your Email'
+  INVOICE_LABEL: 'Invoice ID'
+  SUCCESS_MESSAGE: 'Claim panel created successfully!'
+  ERROR_MESSAGES:
+    NO_PERMISSION: 'You do not have permission to use this command.'
+    CHANNEL_NOT_FOUND: 'Target channel not found. Please check your configuration.'
+    INVOICE_CLAIMED: 'The invoice {invoiceId} has already been claimed.'
+    EMAIL_MISMATCH: 'The provided email does not match the invoice email.'
+    INVOICE_UNPAID: 'Invoice {invoiceId} has not been paid yet.'
+    GENERAL_ERROR: 'An error occurred while processing your request.'
+  SUCCESS_MESSAGES:
+    ROLE_CLAIMED: 'Customer role claimed successfully via invoice {invoiceId}!'
+
+# New Invoice View configuration
+INVOICE_VIEW:
+  EMBED:
+    TITLE: '**Invoice Details**'
+    COLOR: '#9000ff'
+    IMAGE_URL: ''  # Leave empty for no image
+    THUMBNAIL_URL: ''  # Leave empty for no thumbnail
+    TIMESTAMP: true  # Set to false to disable timestamp
+    FIELDS:
+      - NAME: '🆔ID'
+        VALUE: '{unique_id}'
+      - NAME: '📊Status'
+        VALUE: '{status}'
+      - NAME: '📦Product'
+        VALUE: '{product_name}'
+      - NAME: '🔢Variant'
+        VALUE: '{variant_name}'
+      - NAME: '💰Price'
+        VALUE: '{price} {currency}'
+      - NAME: '🎟️Coupon'
+        VALUE: '{coupon}'
+      - NAME: '📧Email'
+        VALUE: '{email}'
+      - NAME: '📋Custom Fields'
+        VALUE: '{custom_fields}'
+      - NAME: '💳Gateway'
+        VALUE: '{gateway}'
+      - NAME: 'ℹ️Gateway Info'
+        VALUE: '{gateway_info}'
+      - NAME: '📤Deliverables'
+        VALUE: '{delivered}'
+      - NAME: '🌎IP Address'
+        VALUE: '{ip}'
+      - NAME: '🕵️User Agent'
+        VALUE: '{user_agent}'
+      - NAME: '⏰Created At'
+        VALUE: '<t:{created_at_timestamp}:F>'
+      - NAME: '⏰Completed At'
+        VALUE: '{completed_at}'
+  ERROR_MESSAGES:
+    NO_PERMISSION: 'You do not have permission to use this command.'
+    NO_INVOICE: 'No invoice found with the id: {invoice_id}'
+    GENERAL_ERROR: 'Failed to view invoice.'
+
+# New Invoice Process configuration
+INVOICE_PROCESS:
+  ERROR_MESSAGES:
+    NO_PERMISSION: "You don't have permission to use this command."
+    NO_INVOICE: "No invoice found with ID: {invoice_id}"
+    ALREADY_PROCESSED: "This invoice has already been processed or cannot be processed."
+    GENERAL_ERROR: "An error occurred while processing the invoice."
+  
+  EMBED:
+    TITLE: "Invoice Process"
+    COLOR: "#00FF00"  # Green color for success
+    DESCRIPTION: "Successfully processed invoice {invoice_id}"
+    TIMESTAMP: true
+    IMAGE_URL: ""  # Optional
+    THUMBNAIL_URL: ""  # Optional
