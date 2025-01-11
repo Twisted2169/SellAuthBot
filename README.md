@@ -1,4 +1,4 @@
-# This is a newly made sellauth bot with 3 full customizable commands within the config.yml
+# This is a newly made sellauth bot with 3 fully customizable commands within the config.yml
 
 ``Invoice View`` = Enter a invoice id to view all details.
 
@@ -8,3 +8,5 @@
 
 
 **Enjoy!!**
+
+-# if youd like me to add other commands from the mainsellauth bot just lmk in discord  @cuejc
